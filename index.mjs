@@ -5,6 +5,7 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 
+
 //root route
 app.get('/', async (req, res) => {
 
@@ -12,7 +13,8 @@ app.get('/', async (req, res) => {
    let response = await fetch(url);
    let data = await response.json();
    //console.log(data);
-   let randImg = data.hits[0].webformatURL;
+   const randInt = Math.floor(Math.random() * data.hits.length);
+   let randImg = data.hits[randInt].webformatURL;
    res.render('home.ejs',{randImg})
 });
 
@@ -22,6 +24,10 @@ app.get('/planet', (req, res) => {
     let planetName = req.query.planetName
     let planetInfo = solarsSystem[`get${planetName}`]();
     res.render('planetInfo.ejs', {planetInfo, planetName})
+});
+
+app.get('/nasaPOD', (req, res) => {
+    res.render('nasaPOD.ejs')
 });
 
 app.listen(3000, () => {
