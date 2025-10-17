@@ -23,6 +23,7 @@ app.get('/', async (req, res) => {
 app.get('/planet', (req, res) => {
     let planetName = req.query.planetName
     let planetInfo = solarsSystem[`get${planetName}`]();
+    //console.log(planetInfo);
     res.render('planetInfo.ejs', {planetInfo, planetName})
 });
 
