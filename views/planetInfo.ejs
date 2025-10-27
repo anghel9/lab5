@@ -54,26 +54,22 @@
             </div>
         </div>
     </nav>
-    <div class="text-center">
-        <h2><%=planetName %></h2>
-        <img src="<%=planetInfo.image%>" width="300">
-        <br>
-        <b>Description</b>: <%=planetInfo.description %>
-        <br>
-        <b><%=planetName %> distance from sun</b>: <%=planetInfo.distanceFromSun %>
-        <br>
-        <b>One <%=planetName %> Year</b>: <%=planetInfo.yearLength %>
-        <br>
-        <b><%=planetName %> radius</b>: <%=planetInfo.radius %>
-        <br>
-        <b>One <%=planetName %> Day</b>: <%=planetInfo.oneEarthDay %>
-        <br>
-        <b>Number of Moons</b>: <%=planetInfo.moons %>
-        <br>
-        <a href="<%=planetInfo.websiteLink %>">Nasa Site</a>
-        <br>
-    </div>
+    <div class="two-column">
+        <div>
+            <img src="<%=planetInfo.image%>">
+        </div>
+        <div>
+            <h2><%=planetName %></h2>
+            <p><b>Description:</b> <%=planetInfo.description %></p>
+            <p><b>Distance from Sun:</b> <%=planetInfo.distanceFromSun %></p>
+            <p><b>Year Length:</b> <%=planetInfo.yearLength %></p>
+            <p><b>Radius:</b> <%=planetInfo.radius %></p>
+            <p><b>Day Length:</b> <%=planetInfo.oneEarthDay %></p>
+            <p><b>Moons:</b> <%=planetInfo.moons %></p>
+            <p><a href="<%=planetInfo.websiteLink %>">NASA Website</a></p>
+        </div>
+    </div> 
+    <%- include("partials/foot.ejs")%>
 
 </body>
-<%- include("partials/foot.ejs")%>
 </html>
